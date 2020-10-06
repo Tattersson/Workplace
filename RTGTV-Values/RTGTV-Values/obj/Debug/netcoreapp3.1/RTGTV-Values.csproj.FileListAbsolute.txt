@@ -1,0 +1,13 @@
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\obj\Debug\netcoreapp3.1\RTGTV-Values.csprojAssemblyReference.cache
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\obj\Debug\netcoreapp3.1\RTGTV-Values.AssemblyInfoInputs.cache
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\obj\Debug\netcoreapp3.1\RTGTV-Values.AssemblyInfo.cs
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\obj\Debug\netcoreapp3.1\RTGTV-Values.csproj.CoreCompileInputs.cache
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\bin\Debug\netcoreapp3.1\RTGTV-Values.exe
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\bin\Debug\netcoreapp3.1\RTGTV-Values.deps.json
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\bin\Debug\netcoreapp3.1\RTGTV-Values.runtimeconfig.json
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\bin\Debug\netcoreapp3.1\RTGTV-Values.runtimeconfig.dev.json
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\bin\Debug\netcoreapp3.1\RTGTV-Values.dll
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\bin\Debug\netcoreapp3.1\RTGTV-Values.pdb
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\obj\Debug\netcoreapp3.1\RTGTV-Values.dll
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\obj\Debug\netcoreapp3.1\RTGTV-Values.pdb
+C:\Users\tatup\git\Workplace\RTGTV-Values\RTGTV-Values\obj\Debug\netcoreapp3.1\RTGTV-Values.genruntimeconfig.cache
