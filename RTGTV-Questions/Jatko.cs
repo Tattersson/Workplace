@@ -32,7 +32,7 @@ namespace RTGTV_Questions
             Console.Write("Anna ElGuidesta tilausnumero: ");
             isOrder = Convert.ToInt32(Console.ReadLine());
 
-            if(isOrder == 9)
+            if (isOrder == 11)
             {
                 Console.WriteLine("Tilausnumero hyväksytty");
             }
