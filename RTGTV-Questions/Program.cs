@@ -6,7 +6,16 @@ namespace RTGTV_Questions
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Heippa, tämä ohjelma toimii teille apuna ja toimittaa tiedot asennuksesta Klinikalle.");
+            
+
+
+
+            Console.WriteLine("TV/AV - Kysely.");
+            Console.Write("Anna kuitin tilausnumero: ");
+            Order();
+            Console.Write("Mikä palvelu: ");
+
+            Console.Write("Television merkki: ");
         }
         
     }
