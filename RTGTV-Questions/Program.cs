@@ -6,9 +6,6 @@ namespace RTGTV_Questions
     {
         static void Main(string[] args)
         {
-            
-
-
 
             Console.WriteLine("TV/AV - Kysely.");
             Console.Write("Anna kuitin tilausnumero: ");
@@ -16,6 +13,7 @@ namespace RTGTV_Questions
             Console.Write("Mikä palvelu: ");
 
             Console.Write("Television merkki: ");
+
         }
         
     }

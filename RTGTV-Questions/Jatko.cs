@@ -30,7 +30,16 @@ namespace RTGTV_Questions
             //Kuitti numero on 9 numeroa pitkä
             Console.WriteLine("Muista antaa myös 4070 alle.");
             Console.Write("Anna ElGuidesta tilausnumero: ");
-            Console.ReadLine();
+            isOrder = Convert.ToInt32(Console.ReadLine());
+
+            if(isOrder == 9)
+            {
+                Console.WriteLine("Tilausnumero hyväksytty");
+            }
+            else
+            {
+                Console.WriteLine($"{isOrder} ei ole hyväksytty");
+            }
 
         }
         public void Service(string isService)

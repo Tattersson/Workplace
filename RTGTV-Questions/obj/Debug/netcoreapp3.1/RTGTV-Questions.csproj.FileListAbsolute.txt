@@ -10,3 +10,4 @@ D:\Koulu\Workplace\RTGTV-Questions\obj\Debug\netcoreapp3.1\RTGTV-Questions.cspro
 D:\Koulu\Workplace\RTGTV-Questions\obj\Debug\netcoreapp3.1\RTGTV-Questions.dll
 D:\Koulu\Workplace\RTGTV-Questions\obj\Debug\netcoreapp3.1\RTGTV-Questions.pdb
 D:\Koulu\Workplace\RTGTV-Questions\obj\Debug\netcoreapp3.1\RTGTV-Questions.genruntimeconfig.cache
+D:\Koulu\Workplace\RTGTV-Questions\obj\Debug\netcoreapp3.1\RTGTV-Questions.csprojAssemblyReference.cache
