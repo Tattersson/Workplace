@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace RTGTV_Questions
 {
@@ -6,6 +7,7 @@ namespace RTGTV_Questions
     {
         static void Main(string[] args)
         {
+            string filePath = @"C:\WriteToFile";
 
             Console.WriteLine("TV/AV - Kysely.");
             Console.Write("Anna kuitin tilausnumero: ");
