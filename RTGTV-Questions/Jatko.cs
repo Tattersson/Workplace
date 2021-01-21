@@ -4,6 +4,11 @@ using System.Text;
 
 namespace RTGTV_Questions
 {
+    enum service
+    {
+        SATV = 1,
+        RTGTV = 2
+    }
     class Jatko
     {
         public string isOrder;
@@ -51,16 +56,19 @@ namespace RTGTV_Questions
         {
             
             int valinta;
-            Console.WriteLine("Valitse oikea numero joka vastaa myymääsi palvelua.");
-
+            Console.WriteLine("\nValitse oikea numero joka vastaa myymääsi palvelua.");
+            Console.WriteLine("\n1. SATV");
+            Console.WriteLine("\n2. RTGTV");
+            Console.Write("\nValintasi on: ");
+            valinta = Int32.Parse(Console.ReadLine());
             //Tarkista miksi tämä ei toimi!!
             switch (valinta)
             {
                 case 1:
-                    Console.WriteLine("SATV");
+                    Console.WriteLine("\nSATV");
                     break;
                 case 2:
-                    Console.WriteLine("RTGTV");
+                    Console.WriteLine("\nRTGTV");
                     break;
                 default:
                     Console.WriteLine("Valintasi on väärin! \nValitse uudelleen.");
