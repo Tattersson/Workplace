@@ -6,7 +6,7 @@ namespace RTGTV_Questions
 {
     class Jatko
     {
-        public int isOrder;
+        public string isOrder;
         public string isService;
         public string isBrand;
         public int isSize;
@@ -17,7 +17,7 @@ namespace RTGTV_Questions
 
         public Jatko()
         {
-            this.isOrder = 0;
+            this.isOrder = "";
             this.isService = "";
             this.isBrand = "";
             this.isSize = 0;
@@ -25,46 +25,47 @@ namespace RTGTV_Questions
             this.isDate = "";
             this.isContinue = "";
         }
-        public void Order(int isOrder)
-        {
-            //Kuitti numero on 9 numeroa pitkä
-            Console.WriteLine("Muista antaa myös 4070 alle.");
-            Console.Write("Anna ElGuidesta tilausnumero: ");
-            isOrder = Convert.ToInt32(Console.ReadLine());
 
-            if (isOrder == 11)
+        public void Order()
+        {
+            int pituus = 11;
+            string isOrder = string.Empty;
+
+            Console.Write("Kuitin numero: ");
+            do
             {
-                Console.WriteLine("Tilausnumero hyväksytty");
-            }
-            else
+                isOrder = Console.ReadLine();
+                if (isOrder.Length == pituus)
+                {
+                    Console.WriteLine(isOrder);
+                }
+                else
+                {
+                    Console.WriteLine("\nError!");
+                    Console.WriteLine("Tarkista tilausnumero.\n");
+                    Console.Write("Anna tilausnumero uudelleen: ");
+                }
+            } while (isOrder.Length != pituus);
+        }
+        public void Service()
+        {
+            
+            int valinta;
+            Console.WriteLine("Valitse oikea numero joka vastaa myymääsi palvelua.");
+
+            //Tarkista miksi tämä ei toimi!!
+            switch (valinta)
             {
-                Console.WriteLine($"{isOrder} ei ole hyväksytty");
+                case 1:
+                    Console.WriteLine("SATV");
+                    break;
+                case 2:
+                    Console.WriteLine("RTGTV");
+                    break;
+                default:
+                    Console.WriteLine("Valintasi on väärin! \nValitse uudelleen.");
+                    break;
             }
-
-        }
-        public void Service(string isService)
-        {
-
-        }
-        public void Brand(string isBrand)
-        {
-
-        }
-        public void Size(int isSize)
-        {
-
-        }
-        public void Delivery(string isDelivery)
-        {
-
-        }
-        public void Date(string isDate)
-        {
-
-        }
-        public void Continue(string isContinue)
-        {
-
         }
     }
 }

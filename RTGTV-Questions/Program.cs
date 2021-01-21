@@ -7,22 +7,27 @@ namespace RTGTV_Questions
     {
         static void Main(string[] args)
         {
-            string filePath = @"C:\WriteToFile";
+            string filePath = @"C:\Workplace\";
+
+            Jatko jatko = new Jatko();
+            
 
             Console.WriteLine("TV/AV - Kysely.");
-            Console.Write("Anna kuitin tilausnumero: ");
-            //Kysy tilausnumero
-            Console.Write("Mikä palvelu: ");
+            //Kysy kuitin numero - Order();
+            jatko.Order();
+
             //Kysy palvelu
-            Console.Write("Television merkki: ");
+            jatko.Service();
+
+
             //Kysy television merkki. Jos Samsung niin kysy jatko kysymykset.
-            Console.Write("Television koko: ");
+
             //Television koko.
-            Console.Write("Onko kuljetusta? (Y = Yes/ N = No)");
+
             //Jos tulee kuljetus niin kysy kuljetuksen päivämäärä ja onko Lilli vai Koppo.
-            Console.Write("Toimistuspäivä: ");
+
             //Toimitus päivän tarkastelu.
-            
+
             //Tähän Kirjoita kaikki tiedot ja kysytään kirjoittajalta onko kaikki tiedot oikein.
             //Jonka jälkeen ohjelma kirjoittaa kaikki tiedot .txt tiedostoon ja formatoi nimen.
             //Esimerkiksi: 40702652652 - SATV36M - 25-01-2021
@@ -32,6 +37,8 @@ namespace RTGTV_Questions
 
 
         }
+
+        
         
     }
 }
