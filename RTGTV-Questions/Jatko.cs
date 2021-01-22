@@ -98,7 +98,7 @@ namespace RTGTV_Questions
             Console.WriteLine(palvelu);
             Console.WriteLine();
             Console.WriteLine("**TESTI**");
-            Console.WriteLine(talous);
+            Console.WriteLine(talous); //<----- ERROR HERE 
             Console.WriteLine();
 
             Console.WriteLine("\nMinkä merkkinen telkkari on?");
