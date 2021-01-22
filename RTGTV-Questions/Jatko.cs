@@ -35,12 +35,12 @@ namespace RTGTV_Questions
         public void Service()
         {
             
-            int palvelu;
-            string palveluValinta;
-            int talous;
-            string talousValinta;
-            int tvMerkki;
-            string isBrand;
+            int palvelu = 0;
+            string palveluValinta = "";
+            int talous = 0;
+            string talousValinta = "";
+            int tvMerkki = 0;
+            string isBrand = "";
 
             Console.WriteLine("\nValitse oikea numero joka vastaa myymääsi palvelua.");
             Console.WriteLine("\n1. SATV");
@@ -52,7 +52,7 @@ namespace RTGTV_Questions
             {
                 bool palveluBool;
                 palveluBool = int.TryParse(Console.ReadLine(), out palvelu);
-                if (palvelu == 1 && palvelu == 2)
+                if (palvelu == 1 || palvelu == 2)
                 {
                     switch (palvelu)
                     {
@@ -79,28 +79,24 @@ namespace RTGTV_Questions
                 {
                     bool talousBool;
                     talousBool = int.TryParse(Console.ReadLine(), out talous);
-                    switch (talous)
+                    if (talous == 1 || talous == 2)
                     {
-                        case 1:
-                            talousValinta = "Antenni";
-                            Console.WriteLine(talousValinta);
-                            break;
+                        switch (talous)
+                        {
+                            case 1:
+                                talousValinta = "Antenni";
+                                Console.WriteLine(talousValinta);
+                                break;
 
-                        case 2:
-                            talousValinta = "Kaapeli";
-                            Console.WriteLine(talousValinta);
-                            break;
+                            case 2:
+                                talousValinta = "Kaapeli";
+                                Console.WriteLine(talousValinta);
+                                break;
 
+                        }
                     }
                 } while (talous != 1 && talous != 2);
             }
-            Console.WriteLine("**TESTI**");
-            Console.WriteLine(palvelu);
-            Console.WriteLine();
-            Console.WriteLine("**TESTI**");
-            Console.WriteLine(talous); //<----- ERROR HERE 
-            Console.WriteLine();
-
             Console.WriteLine("\nMinkä merkkinen telkkari on?");
             Console.WriteLine("\n1. Samsung");
             Console.WriteLine("2. Philips");
@@ -137,9 +133,16 @@ namespace RTGTV_Questions
                         Console.WriteLine(isBrand);
                         break;
                 }
-            } while (tvMerkki >= 1 && tvMerkki <= 5);
+            } while (tvMerkki < 1 && tvMerkki > 5);
+            Console.WriteLine();
             Console.WriteLine("**TESTI**");
-            Console.WriteLine(tvMerkki);
+            Console.Write(tvMerkki);Console.Write(isBrand);
+            Console.WriteLine();
+            Console.WriteLine("**TESTI**");
+            Console.Write(palvelu); Console.Write(palveluValinta);
+            Console.WriteLine();
+            Console.WriteLine("**TESTI**");
+            Console.Write(talous); Console.WriteLine(talousValinta);
             Console.WriteLine();
 
             if (tvMerkki == 1 && palvelu == 1)
