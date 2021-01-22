@@ -12,15 +12,14 @@ namespace RTGTV_Questions
             Jatko jatko = new Jatko();
             
 
-            Console.WriteLine("TV/AV - Kysely.");
+            Console.WriteLine("TV/AV - Kysely.\n");
             //Kysy kuitin numero - Order();
             jatko.Order();
 
             //Kysy palvelu
             jatko.Service();
-
-
             //Kysy television merkki. Jos Samsung niin kysy jatko kysymykset.
+
 
             //Television koko.
 

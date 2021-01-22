@@ -4,37 +4,15 @@ using System.Text;
 
 namespace RTGTV_Questions
 {
-    enum service
-    {
-        SATV = 1,
-        RTGTV = 2
-    }
+
     class Jatko
     {
-        public string isOrder;
-        public string isService;
-        public string isBrand;
-        public int isSize;
-        public string isDelivery;
-        public string isDate;
-        public string isContinue;
-
-
-        public Jatko()
-        {
-            this.isOrder = "";
-            this.isService = "";
-            this.isBrand = "";
-            this.isSize = 0;
-            this.isDelivery = "";
-            this.isDate = "";
-            this.isContinue = "";
-        }
-
+      
         public void Order()
         {
             int pituus = 11;
-            string isOrder = string.Empty;
+            string isOrder;
+            
 
             Console.Write("Kuitin numero: ");
             do
@@ -43,6 +21,7 @@ namespace RTGTV_Questions
                 if (isOrder.Length == pituus)
                 {
                     Console.WriteLine(isOrder);
+                    
                 }
                 else
                 {
@@ -51,29 +30,127 @@ namespace RTGTV_Questions
                     Console.Write("Anna tilausnumero uudelleen: ");
                 }
             } while (isOrder.Length != pituus);
+           
         }
         public void Service()
         {
             
-            int valinta;
+            int palvelu;
+            string palveluValinta;
+            int talous;
+            string talousValinta;
+            int tvMerkki;
+            string isBrand;
+
             Console.WriteLine("\nValitse oikea numero joka vastaa myymääsi palvelua.");
             Console.WriteLine("\n1. SATV");
-            Console.WriteLine("\n2. RTGTV");
+            Console.WriteLine("2. RTGTV");
             Console.Write("\nValintasi on: ");
-            valinta = Int32.Parse(Console.ReadLine());
-            //Tarkista miksi tämä ei toimi!!
-            switch (valinta)
+            
+          //Kysytään onko kumpi palvelu kyseessä. RTGTV Jätetään huomioimatta mutta kirjotetaan tiedostoon.
+            do
             {
-                case 1:
-                    Console.WriteLine("\nSATV");
-                    break;
-                case 2:
-                    Console.WriteLine("\nRTGTV");
-                    break;
-                default:
-                    Console.WriteLine("Valintasi on väärin! \nValitse uudelleen.");
-                    break;
+                bool palveluBool;
+                palveluBool = int.TryParse(Console.ReadLine(), out palvelu);
+                if (palvelu == 1 && palvelu == 2)
+                {
+                    switch (palvelu)
+                    {
+                        case 1:
+                            palveluValinta = "SATV";
+                            Console.WriteLine(palveluValinta);
+                            break;
+                        case 2:
+                            palveluValinta = "RTGTV";
+                            Console.WriteLine(palveluValinta);
+                            break;
+                    }                    
+                }
+                
+            } while (palvelu != 1 && palvelu != 2);
+            //Jos SATV niin kysytään palveluun tarvittavat lisäkysymykset.
+            if(palvelu == 1)
+            {
+                Console.WriteLine("\nMikä talous asiakkaalla on?");
+                Console.WriteLine("\n1. Antenni");
+                Console.WriteLine("2. Kaapeli");
+                Console.Write("\nValitse toinen: ");
+                do
+                {
+                    bool talousBool;
+                    talousBool = int.TryParse(Console.ReadLine(), out talous);
+                    switch (talous)
+                    {
+                        case 1:
+                            talousValinta = "Antenni";
+                            Console.WriteLine(talousValinta);
+                            break;
+
+                        case 2:
+                            talousValinta = "Kaapeli";
+                            Console.WriteLine(talousValinta);
+                            break;
+
+                    }
+                } while (talous != 1 && talous != 2);
             }
+            Console.WriteLine("**TESTI**");
+            Console.WriteLine(palvelu);
+            Console.WriteLine();
+            Console.WriteLine("**TESTI**");
+            Console.WriteLine(talous);
+            Console.WriteLine();
+
+            Console.WriteLine("\nMinkä merkkinen telkkari on?");
+            Console.WriteLine("\n1. Samsung");
+            Console.WriteLine("2. Philips");
+            Console.WriteLine("3. LG");
+            Console.WriteLine("4. Sony");
+            Console.WriteLine("5. TCL");
+
+            Console.Write("\nValintasi on: ");
+            do
+            {
+                bool tvMerkkiBool;
+                tvMerkkiBool = int.TryParse(Console.ReadLine(), out tvMerkki);
+
+                switch (tvMerkki)
+                {
+                    case 1:
+                        isBrand = "Samsung";
+                        Console.WriteLine(isBrand);
+                        break;
+                    case 2:
+                        isBrand = "Philips";
+                        Console.WriteLine(isBrand);
+                        break;
+                    case 3:
+                        isBrand = "LG";
+                        Console.WriteLine(isBrand);
+                        break;
+                    case 4:
+                        isBrand = "Sony";
+                        Console.WriteLine(isBrand);
+                        break;
+                    case 5:
+                        isBrand = "TCL";
+                        Console.WriteLine(isBrand);
+                        break;
+                }
+            } while (tvMerkki >= 1 && tvMerkki <= 5);
+            Console.WriteLine("**TESTI**");
+            Console.WriteLine(tvMerkki);
+            Console.WriteLine();
+
+            if (tvMerkki == 1 && palvelu == 1)
+            {
+                Console.WriteLine("Muistathan käydä tekemässä asiakkaalle Samsung tilin.");
+                Console.WriteLine("Jos asiakkaalla ei ole sähköpostia niin muista tehdä hänelle se.");
+            }
+
         }
+
+
+
     }
 }
