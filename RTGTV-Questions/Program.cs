@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Diagnostics;
 
 namespace RTGTV_Questions
 {
@@ -19,12 +20,12 @@ namespace RTGTV_Questions
             //Kysy palvelu
             jatko.Service();
             //Kysy television merkki. Jos Samsung niin kysy jatko kysymykset.
-
+            //^^^Tämä liitetty jatko.Service(); luokkaan^^
 
             //Television koko.
-
+            jatko.Size();
             //Jos tulee kuljetus niin kysy kuljetuksen päivämäärä ja onko Lilli vai Koppo.
-
+            jatko.Transport();
             //Toimitus päivän tarkastelu.
 
             //Tähän Kirjoita kaikki tiedot ja kysytään kirjoittajalta onko kaikki tiedot oikein.
