@@ -10,20 +10,60 @@ namespace RTGTV_Questions
 
     class Jatko
     {
-        public void Order()
+        DateTime timeNow = DateTime.Now;
+        public DateTime kuljetusPva;
+        public DateTime RTGDate;
+        public const int pituus = 11;
+        public const string varasto = "Tehdään televisio varaston puolella.";
+        public const string klinikka = "Tehdään televisio klinikan puolella.";
+        public string isOrder;
+        public int palvelu;
+        public string palveluValinta;
+        public int talous;
+        public string talousValinta;
+        public int tvMerkki;
+        public string tvMerkkiValinta;
+        public int tili;
+        public string tiliKirjoitus;
+        public string url;
+        public string kyleiValinta;
+        public string kill;
+        public int koko;
+        public string kuljetus;
+
+
+        public Jatko()
         {
-            int pituus = 11;
-            string isOrder;
+            this.isOrder = string.Empty;
+            this.tvMerkkiValinta = string.Empty;
+            this.palvelu = 0;
+            this.palveluValinta = string.Empty;
+            this.talous = 0;
+            this.talousValinta = string.Empty;
+            this.tvMerkki = 0;
+            this.tvMerkkiValinta = string.Empty;
+            this.tili = 0;
+            this.tiliKirjoitus = string.Empty;
+            this.url = string.Empty;
+            this.kyleiValinta = string.Empty;
+            this.kill = string.Empty; 
+            this.koko = 0;
+            this.kuljetus = string.Empty;
             
 
+
+        }
+
+       
+        public void Order()
+        { 
             Console.Write("Kuitin numero: ");
             do
             {
-                isOrder = Console.ReadLine();
-                if (isOrder.Length == pituus)
+                this.isOrder = Console.ReadLine();
+                if (this.isOrder.Length == pituus)
                 {
-                    Console.WriteLine(isOrder);
-                    
+                    Console.WriteLine("Hyväksytty");
                 }
                 else
                 {
@@ -31,20 +71,11 @@ namespace RTGTV_Questions
                     Console.WriteLine("Tarkista tilausnumero.\n");
                     Console.Write("Anna tilausnumero uudelleen: ");
                 }
-            } while (isOrder.Length != pituus);
+            } while (this.isOrder.Length != pituus);
            
         }
         public void Service()
         {
-            
-            int palvelu = 0;
-            string palveluValinta = "";
-            int talous = 0;
-            string talousValinta = "";
-            int tvMerkki = 0;
-            string tvMerkkiValinta = "";
-            int tili = 0;
-            string tiliKirjoitus = "";
             string url = "https://account.samsung.com/accounts/v1/DCGLFI/signInGate?response_type=code&client_id=b74e1ys3uk&locale=fi_FI&countryCode=FI&redirect_uri=https:%2F%2Fwww.samsung.com%2Faemapi%2Fdata-login%2FafterLogin.fi.json&state=GLBk1iueo17x2p&goBackURL=https:%2F%2Fwww.samsung.com%2Ffi%2Faccount%2Fmyaccount%2F&scope=";
 
 
@@ -57,25 +88,30 @@ namespace RTGTV_Questions
             do
             {
                 bool palveluBool;
-                palveluBool = int.TryParse(Console.ReadLine(), out palvelu);
-                if (palvelu == 1 || palvelu == 2)
+                palveluBool = int.TryParse(Console.ReadLine(), out this.palvelu);
+                if (this.palvelu == 1 || this.palvelu == 2)
                 {
-                    switch (palvelu)
+                    switch (this.palvelu)
                     {
                         case 1:
-                            palveluValinta = "SATV";
-                            Console.WriteLine(palveluValinta);
+                            this.palveluValinta = "SATV";
+                            Console.WriteLine("Hyväksytty");
                             break;
                         case 2:
-                            palveluValinta = "RTGTV";
-                            Console.WriteLine(palveluValinta);
+                            palveluValinta = "Hyväksytty";
+                            Console.WriteLine(this.palveluValinta);
                             break;
                     }                    
                 }
+                else
+                {
+                    Console.WriteLine("Error!");
+                    Console.Write("Yritä uudelleen: ");
+                }
                 
-            } while (palvelu != 1 && palvelu != 2);
+            } while (this.palvelu != 1 && this.palvelu != 2);
             //Jos SATV niin kysytään palveluun tarvittavat lisäkysymykset.
-            if(palvelu == 1)
+            if(this.palvelu == 1)
             {
                 Console.WriteLine("\nMikä talous asiakkaalla on?");
                 Console.WriteLine("\n1. Antenni");
@@ -84,24 +120,29 @@ namespace RTGTV_Questions
                 do
                 {
                     bool talousBool;
-                    talousBool = int.TryParse(Console.ReadLine(), out talous);
-                    if (talous == 1 || talous == 2)
+                    talousBool = int.TryParse(Console.ReadLine(), out this.talous);
+                    if (this.talous == 1 || this.talous == 2)
                     {
-                        switch (talous)
+                        switch (this.talous)
                         {
                             case 1:
-                                talousValinta = "Antenni";
-                                Console.WriteLine(talousValinta);
+                                this.talousValinta = "Antenni";
+                                Console.WriteLine("Hyväksytty");
                                 break;
 
                             case 2:
-                                talousValinta = "Kaapeli";
-                                Console.WriteLine(talousValinta);
+                                this.talousValinta = "Kaapeli";
+                                Console.WriteLine("Hyväksytty");
                                 break;
 
                         }
                     }
-                } while (talous != 1 && talous != 2);
+                    else
+                    {
+                        Console.WriteLine("Error!");
+                        Console.Write("Yritä uudelleen: ");
+                    }
+                } while (this.talous != 1 && this.talous != 2);
             }
             Console.WriteLine("\nMinkä merkkinen telkkari on?");
             Console.WriteLine("\n1. Samsung");
@@ -114,51 +155,40 @@ namespace RTGTV_Questions
             do
             {
                 bool tvMerkkiBool;
-                tvMerkkiBool = int.TryParse(Console.ReadLine(), out tvMerkki);
+                tvMerkkiBool = int.TryParse(Console.ReadLine(), out this.tvMerkki);
 
-                switch (tvMerkki)
+                switch (this.tvMerkki)
                 {
                     case 1:
-                        tvMerkkiValinta = "Samsung";
-                        Console.WriteLine(tvMerkkiValinta);
+                        this.tvMerkkiValinta = "Samsung";
+                        Console.WriteLine(this.tvMerkkiValinta);
                         break;
                     case 2:
-                        tvMerkkiValinta = "Philips";
-                        Console.WriteLine(tvMerkkiValinta);
+                        this.tvMerkkiValinta = "Philips";
+                        Console.WriteLine(this.tvMerkkiValinta);
                         break;
                     case 3:
-                        tvMerkkiValinta = "LG";
-                        Console.WriteLine(tvMerkkiValinta);
+                        this.tvMerkkiValinta = "LG";
+                        Console.WriteLine(this.tvMerkkiValinta);
                         break;
                     case 4:
-                        tvMerkkiValinta = "Sony";
-                        Console.WriteLine(tvMerkkiValinta);
+                        this.tvMerkkiValinta = "Sony";
+                        Console.WriteLine(this.tvMerkkiValinta);
                         break;
                     case 5:
-                        tvMerkkiValinta = "TCL";
-                        Console.WriteLine(tvMerkkiValinta);
+                        this.tvMerkkiValinta = "TCL";
+                        Console.WriteLine(this.tvMerkkiValinta);
                         break;
                 }
-            } while (tvMerkki < 1 && tvMerkki > 5);
+            } while (this.tvMerkki < 1 && this.tvMerkki > 5);
 
-            //KOMMENTOI POIS KUN VALMIS JA TOIMIVA OHJELMA****
-            Console.WriteLine();
-            Console.WriteLine("**TESTI**");
-            Console.Write(tvMerkki);Console.Write(tvMerkkiValinta);
-            Console.WriteLine();
-            Console.WriteLine("**TESTI**");
-            Console.Write(palvelu); Console.Write(palveluValinta);
-            Console.WriteLine();
-            Console.WriteLine("**TESTI**");
-            Console.Write(talous); Console.WriteLine(talousValinta);
-            Console.WriteLine();
-
-
-            string kyleiValinta = string.Empty;
-            string kill = string.Empty;
             
 
-            if (tvMerkkiValinta == "Samsung" && palveluValinta == "SATV")
+
+            
+            
+
+            if (this.tvMerkkiValinta == "Samsung" && this.palveluValinta == "SATV")
             {
                 Console.WriteLine("*************************************************************************");
                 Console.WriteLine("*Muistathan käydä tekemässä asiakkaalle Samsung tilin.                  *");
@@ -167,17 +197,17 @@ namespace RTGTV_Questions
                 Console.WriteLine("*************************************************************************");
                 Console.WriteLine("\nOnko hänellä jo käytettävissä oleva Samsung tili?");
                 Console.WriteLine("k = kyllä / e = ei");
-                Console.Write("Valintasi on: ");
+                Console.Write("\nValintasi on: ");
                 do
                 {
-                    kyleiValinta = Console.ReadLine().ToLower();
-                    if (kyleiValinta == "k")
+                    this.kyleiValinta = Console.ReadLine().ToLower();
+                    if (this.kyleiValinta == "k")
                     {
-                        Console.Write("Kirjoita se tähän: ");
-                        tiliKirjoitus = Console.ReadLine().ToLower();
+                        Console.Write("\nKirjoita se tähän: ");
+                        this.tiliKirjoitus = Console.ReadLine().ToLower();
                         break;
                     }
-                    else if (kyleiValinta == "e")
+                    else if (this.kyleiValinta == "e")
                     {
                         Console.WriteLine("\nKopioi tämä ja mene osoitteeseen haluamallasi verkkoselaimella.\n");
                         Console.WriteLine(url);
@@ -199,54 +229,106 @@ namespace RTGTV_Questions
                         */
 
                     }
-                } while (tvMerkki == 1 && palvelu == 1);
+                    else
+                    {
+                        Console.WriteLine("Yritä uudelleen:");
+                        Console.WriteLine("Valinnat on!\n k = Kyllä\n e = Ei");
+                        Console.Write("\nValitse uudelleen: ");
+                    }
+                } while (this.tvMerkki == 1 && this.palvelu == 1);
             }
-            Console.WriteLine();
-            Console.WriteLine("**TESTI**");
-            Console.Write(kyleiValinta); Console.WriteLine(tiliKirjoitus);
-            Console.WriteLine();
+           
         }
         public void Size()
         {
-            int koko = 0;
-            string varasto = "Tehdään televisio varaston puolella.";
-            string klinikka = "Tehdään televisio klinikan puolella.";
-
+            
             Console.Write("\nTelevision koko: ");
             bool kokoBool;
-            kokoBool = int.TryParse(Console.ReadLine(), out koko);
-            Console.WriteLine(koko);
+            kokoBool = int.TryParse(Console.ReadLine(), out this.koko);
+            Console.WriteLine(this.koko);
 
-            if (koko >= 65)
-            {
-                Console.WriteLine(klinikka);
-            }
-            else
-            {
-                Console.WriteLine(varasto);
-            }
         }
         public void Transport()
         {
-            string kuljetus;
-            string kuljetusPva;
-
-
+            Console.WriteLine($"\nAika nyt: {timeNow}\n");
             Console.WriteLine("Tuleeko tuotteelle kuljetusta?");
             Console.WriteLine("k = kyllä / e = ei");
-            Console.Write("Valintasi on: ");
-            kuljetus = Console.ReadLine().ToLower();
-
-            if (kuljetus == "k")
+            Console.Write("\nValintasi on: ");
+            do
             {
-                Console.WriteLine("\nMille päivälle kuljetus on tapahtumassa?");
-                bool kuljetusPvaBool;
-                kuljetusPvaBool = int.TryParse(Console.ReadLine(), out kuljetusPva); //kuljetus on string ei int!!
-                kuljetusPva;
-            }
+
+                this.kuljetus = Console.ReadLine().ToLower();
+
+                if (this.kuljetus == "k")
+                {
+                    Console.WriteLine("\nMille päivälle kuljetus on tapahtumassa?");
+                    kuljetusPva = DateTime.Parse(Console.ReadLine());
+                    break;
+                }
+                else if (this.kuljetus == "e")
+                {
+                    Console.WriteLine("Tuotteelle ei tule kuljetusta.");
+                }
+                else
+                {
+                    Console.WriteLine("Yritä uudelleen:");
+                    Console.WriteLine("Valinnat on!\n k = Kyllä\n e = Ei");
+                    Console.Write("\nValitse uudelleen: ");
+                    
+                }
+            } while (this.kuljetus != "k"  && this.kuljetus != "e");
         }
+        
+        public void RTG()
+        {
+            
+            Console.WriteLine("\nMille päivälle asennus valmiiksi?\n");
+            Console.WriteLine($"Aika nyt: {timeNow}");
+            Console.Write("\nPäivämäärä ja aika: ");
+            RTGDate = DateTime.Parse(Console.ReadLine());
+            Console.WriteLine(RTGDate);  
 
+            // Tähän jatketaan vielä se ehto että myyjä ei voi merkata samalle päivälle asennusta.
 
+            //Kalenteri myös joka lukee kaikki tiedostot mitä kansiosta löytyy ja etsii tiedosto nimestä päivämäärän ja se kirjoitetaan konsoliin jotta nähdään kuinka monta asennusta on päivässä.
+        }
+        public void WriteToConsole()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Tältä näyttää kirjotettu tiedosto".ToUpper());
+            Console.WriteLine();
+            Console.WriteLine($"Tiedoston nimeksi tulee: {isOrder} - {palveluValinta} - {RTGDate.Date}\n");
+            Console.WriteLine($"Asiakkaalle tulee:\t {talousValinta}talous");
+            Console.WriteLine($"Television merkki:\t {tvMerkkiValinta}");
+            if (this.kyleiValinta == "k")
+            {
+                Console.WriteLine($"Asiakkaan samsung tilin sposti:\t{tiliKirjoitus}");
+            }
+            //Telkkarin koko ja asennus paikka.
+            if (this.koko >= 65)
+            {
+                Console.WriteLine(varasto);
+            }
+            else
+            {
+                Console.WriteLine(klinikka);
+            }
+            //Kuljetus ja oikean linen tulostus.
+            if (this.kuljetus == "k")
+            {
+                Console.WriteLine($"Tuotteen kuljetus päivä on:\t {kuljetusPva}");
+            }
+            else
+            {
+                Console.WriteLine("Tuotteelle ei tule kuljetusta");
+            }
 
+            //Yllä olevat tiedostot kirjoitetaan tiedostoon! Tätä ei ole vielä tehty vaan tämä näkyy vasta vain ohjelmassa. 
+            //Kysytään vielä että onko tiedot varmasti oikeat. Jos ei aloitetaan uudelleen ohjelma. 
+        }
+        public void WriteToTXT()
+        {
+            //Tähän kirjoitetaan kaikki WriteToConsole() arvot TXT tiedostoon. 
+        }
     }
 }

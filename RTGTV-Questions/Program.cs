@@ -27,18 +27,18 @@ namespace RTGTV_Questions
             //Jos tulee kuljetus niin kysy kuljetuksen päivämäärä ja onko Lilli vai Koppo.
             jatko.Transport();
             //Toimitus päivän tarkastelu.
+            jatko.RTG();
 
+            //Kirjoitetaan konsoliin ja kysytään että onko annetut tiedot oikein?
+            jatko.WriteToConsole();
             //Tähän Kirjoita kaikki tiedot ja kysytään kirjoittajalta onko kaikki tiedot oikein.
             //Jonka jälkeen ohjelma kirjoittaa kaikki tiedot .txt tiedostoon ja formatoi nimen.
-            //Esimerkiksi: 40702652652 - SATV36M - 25-01-2021
+            //Esimerkiksi: 40702652652 - SATV36M - 25-01-2021.txt
 
 
             //TM RTGTV-Ohjelma - Tatu-Topias Paski - 2021
 
 
         }
-
-        
-        
     }
 }
